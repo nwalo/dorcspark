@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   outline: none;
+  overflow-x: hidden;
 }
 
 * {
@@ -16,7 +17,7 @@ ul, li {
 
 h2 {
   padding: 2px;
-  margin: 0 0 50px;
+  margin: 0 0 30px;
 }
 
 .hide {
@@ -102,7 +103,7 @@ button:focus {
 
 section {
   width: 90%;
-  margin: 50px auto;
+  margin: 0px auto;
   box-sizing: content-box;
 }
 
@@ -151,6 +152,7 @@ nav {
   padding: 10px 50px;
   top: 0;
   z-index: 100;
+  /* padding: 0; */
 }
 
 .top-menu {
@@ -166,6 +168,7 @@ header nav {
   background-color: #758dbe;
   background-blend-mode: multiply;
   height: 500px;
+  position: relative;
 }
 
 header h6 {
@@ -255,6 +258,10 @@ footer-col:nth-of-type(4) svg {
 }
 
 @media (max-width: 1000px) {
+  nav {
+    padding: 10px 0;
+  }
+
   #menu~label {
     font-size: 1.5em;
     color: #DFD0D0;
@@ -304,12 +311,7 @@ footer-col:nth-of-type(4) svg {
     padding-right: 30px;
   }
 
-  nav {
-    padding: 0;
-  }
-
   nav ul {
-    /* width: 100vw; */
     margin: 0;
     padding: 0;
   }
@@ -332,6 +334,51 @@ footer-col:nth-of-type(4) svg {
   }
 
 }
+
+/* WORK PART */
+
+.work{
+  position: absolute;
+  z-index: 20000;
+  bottom: 300px;
+  right: -400px;
+  transition: .5s ease-in;
+  color: white;
+  animation: start 10s linear infinite;
+}
+
+.work h4{
+  font-weight: 400;
+}
+
+.work h4:nth-of-type(1){
+  animation: animate 1.5s linear .5s forwards;
+}
+
+.work h4:nth-of-type(2){
+  animation: animate 1.5s linear 2s forwards;
+}
+.work h4:nth-of-type(3){
+  animation: animate 1.5s linear 4s forwards;
+}
+.work h4:nth-of-type(4){
+  animation: animate 1.5s linear 6s forwards;
+}
+.work h4:nth-of-type(5){
+  animation: animate 1.5s linear 8s forwards;
+}
+
+@keyframes animate {
+  0%{
+    z-index: 20;
+    transition: .5s ease-in;
+  }
+  100%{
+    transform: translateX(-500px);
+  }
+}
+
+/* MAIN PART */
 
 .about{
   margin: 5% auto;
@@ -358,10 +405,6 @@ footer-col:nth-of-type(4) svg {
   padding: 5% 10%;
   width: 80%;
   background-color: #e7e7e7;
-}
-
-.services h1{
-  display: inline-block;
 }
 
 .why{
@@ -529,53 +572,48 @@ footer a:hover {
   }
 }
 
-@media (min-width : 992px) and (max-width : 1100px) {
-  .card .img-overlay {
-    width: 100%;
-    height: 19.5vw;
+@media (max-width: 1000px) {
+  .serve div{
+    width: 45%;
+    padding: 30px 0;
+  }
+
+  .serve{
+    justify-content: space-between;
+  }
+
+  .tools div{
+    width: 45%;
+    padding: 30px 0;
+  }
+
+  .tools{
+    justify-content: space-between;
+  }
+
+  .checker{
+    display: none;
   }
 }
 
-@media (min-width : 805px) and (max-width : 992px) {
-  .card .img-overlay {
-    width: 100%;
-    height: 26vw;
+@media (max-width: 700px) {
+  .serve div{
+    width: 90%;
+    margin: auto;
+    padding: 30px 0;
   }
-}
 
-@media (min-width : 780px) and (max-width : 805px) {
-  .card .img-overlay {
-    width: 100%;
-    height: 25.6vw;
+  .serve{
+    justify-content: space-between;
   }
-}
 
-@media (min-width : 685px) and (max-width : 780px) {
-  .card .img-overlay {
-    width: 100%;
-    height: 24.5vw;
+  .tools div{
+    width: 90%;
+    margin: auto;
+    padding: 30px 0;
   }
-}
 
-@media (min-width : 575px) and (max-width : 685px) {
-  .card .img-overlay {
-    width: 100%;
-    height: 23vw;
+  .tools{
+    justify-content: space-between;
   }
-}
-
-@media (min-width : 550px) and (max-width : 575px) {
-  .card .img-overlay {
-    width: 100%;
-    height: 36vw;
-  }
-}
-
-.download a svg {
-  font-size: 1.6em;
-}
-
-.acct-spread {
-  display: flex;
-  justify-content: space-between;
 }
